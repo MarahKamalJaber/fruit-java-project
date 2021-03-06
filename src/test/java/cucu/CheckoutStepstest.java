@@ -30,6 +30,7 @@ public class CheckoutStepstest {
 	@Then("The amount of many should be {int}")
 	public void the_amount_of_many_should_be(Integer remaining) {
 	   assertTrue(am==remaining);
+	   fc.checkout();
 	}
 
 	@Then("Error should be appeared")

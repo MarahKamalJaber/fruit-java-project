@@ -1,12 +1,15 @@
-Feature: Cheakout feature
-@regression
-Scenario: I need to buy 1 apple
-Given I should have 50 NIS
-When I checkout for buying an one apple 
-Then The amount of many should be 49 
-@sanity
-Scenario: I need to buy 1 apple and I have just 1 NIS
+Feature: Admin login
+Scenario Outline: Administrator has the wrong password
 
-Given I should have 1 NIS
-When I checkout for buying an one apple 
-Then Error should be appeared
+Given The Admin  <username> and  <password>
+
+When The Admin enters Username as <username> and Password as <wrongpassword>
+
+
+Then The Admin  is not able to successfully login because password wrong
+
+Examples: 
+
+|username|password||wrongpassword|
+|"farah"||129||897|
+|"masa"||457||654|
